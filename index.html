@@ -77,6 +77,8 @@ nav a:hover{color:var(--ink)}
 .about{display:grid;grid-template-columns:1fr 1.5fr;gap:44px;align-items:start}
 @media(max-width:860px){.about{grid-template-columns:1fr}}
 .avatar{aspect-ratio:1;max-width:320px;border-radius:24px;background:linear-gradient(135deg,#0f5c4d,#173a4f);display:grid;place-items:center;font:700 96px Georgia,serif;color:var(--acc2);border:1px solid var(--line);box-shadow:var(--shadow)}
+.avatar{position:relative;overflow:hidden}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
 .about p{color:var(--muted);margin-bottom:14px}
 .about p strong{color:var(--ink)}
 
@@ -152,7 +154,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 </section>
 
 <section id="about"><div class="wrap about rv">
-  <div class="avatar" aria-hidden="true">AD</div>
+  <div class="avatar"><span aria-hidden="true">AD</span><img src="photo.png" alt="Abdoul DIA" onerror="this.remove()"></div>
   <div>
     <div class="eyebrow" data-i18n="n_about"></div>
     <h2 data-i18n="about_t"></h2>
