@@ -52,6 +52,9 @@ nav a:hover{color:var(--ink)}
 .hero h1{font-size:clamp(36px,6.2vw,66px);max-width:860px;margin:14px 0 18px}
 .hero h1 em{font-style:normal;color:var(--acc)}
 .hero p{font-size:19px;color:var(--muted);max-width:640px}
+.hero .wrap{position:relative}
+.hero-photo{position:absolute;top:0;right:20px;width:210px;height:210px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--acc);box-shadow:var(--shadow);background:var(--card)}
+@media(max-width:860px){.hero-photo{position:static;float:right;width:96px;height:96px;margin:0 0 8px 14px}}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 8px}
 .btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:12px;border:1px solid var(--acc);cursor:pointer;font-size:15px}
 .btn.p{background:var(--acc);color:var(--accInk)}
@@ -141,6 +144,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 <main id="top">
 <section class="hero">
   <div class="wrap">
+    <img class="hero-photo" src="photo.png" alt="Abdoul DIA" onerror="this.remove()">
     <div class="eyebrow" data-i18n="eyebrow"></div>
     <h1 data-i18n="h1"></h1>
     <p data-i18n="sub"></p>
@@ -154,7 +158,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-s
 </section>
 
 <section id="about"><div class="wrap about rv">
-  <div class="avatar"><span aria-hidden="true">AD</span><img src="photo.png" alt="Abdoul DIA" onerror="this.remove()"></div>
+  <div class="avatar" aria-hidden="true">AD</div>
   <div>
     <div class="eyebrow" data-i18n="n_about"></div>
     <h2 data-i18n="about_t"></h2>
