@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdoul DIA · Statisticien-démographe et Data Analyst</title>
+<meta name="description" content="Portfolio d'Abdoul DIA, consultant indépendant en statistique, démographie, enquêtes ménages (MICS, RGPH, SMART, IPC) et analyse de données.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5c4d'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia' font-weight='700' text-anchor='middle' fill='%23e9c46a'%3EAD%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b1218; --bg2:#101a23; --card:#14202b; --line:#22313e; --ink:#e9eef3; --muted:#9db0c0;
+  --acc:#2fbf9b; --acc2:#e9c46a; --accInk:#06231b; --shadow:0 10px 40px rgba(0,0,0,.35);
+}
+:root[data-theme="light"]{
+  --bg:#f6f4ef; --bg2:#ffffff; --card:#ffffff; --line:#e3ded2; --ink:#16212b; --muted:#566574;
+  --acc:#0f7b5f; --acc2:#b9831c; --accInk:#ffffff; --shadow:0 10px 30px rgba(30,40,50,.10);
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+.eyebrow{color:var(--acc);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+h2{font-size:clamp(28px,4vw,40px);margin:8px 0 14px}
+.lead{color:var(--muted);max-width:680px}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:Georgia,serif;font-weight:700;font-size:20px;text-decoration:none}
+.logo span{color:var(--acc)}
+nav ul{display:flex;gap:22px;list-style:none;padding:0}
+nav a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:600}
+nav a:hover{color:var(--ink)}
+.tools{display:flex;gap:8px;align-items:center}
+.btn-i{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:7px 11px;font-size:13px;font-weight:700;cursor:pointer}
+.btn-i:hover{border-color:var(--acc)}
+.burger{display:none}
+@media(max-width:860px){
+  nav{position:absolute;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 20px 16px}
+  nav a{display:block;padding:11px 0}
+  .burger{display:inline-block}
+}
+
+/* hero */
+.hero{padding:140px 0 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-20% -10% auto auto;width:640px;height:640px;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 28%,transparent),transparent 65%);pointer-events:none}
+.hero h1{font-size:clamp(36px,6.2vw,66px);max-width:860px;margin:14px 0 18px}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{font-size:19px;color:var(--muted);max-width:640px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 8px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:12px;border:1px solid var(--acc);cursor:pointer;font-size:15px}
+.btn.p{background:var(--acc);color:var(--accInk)}
+.btn.p:hover{filter:brightness(1.08)}
+.btn.s{background:transparent;color:var(--ink)}
+.btn.s:hover{background:var(--card)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:54px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.stat b{display:block;font:700 38px/1 Georgia,serif;color:var(--acc2)}
+.stat span{color:var(--muted);font-size:14px}
+.partners{margin-top:30px;color:var(--muted);font-size:13px;letter-spacing:.06em}
+.partners strong{color:var(--ink);margin-right:6px}
+
+/* grids */
+.grid{display:grid;gap:16px;margin-top:34px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:var(--shadow)}
+.card .ic{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--acc) 16%,transparent);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.about{display:grid;grid-template-columns:1fr 1.5fr;gap:44px;align-items:start}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.avatar{aspect-ratio:1;max-width:320px;border-radius:24px;background:linear-gradient(135deg,#0f5c4d,#173a4f);display:grid;place-items:center;font:700 96px Georgia,serif;color:var(--acc2);border:1px solid var(--line);box-shadow:var(--shadow)}
+.about p{color:var(--muted);margin-bottom:14px}
+.about p strong{color:var(--ink)}
+
+/* timeline */
+.tl{position:relative;margin-top:34px;padding-left:26px;border-left:2px solid var(--line)}
+.ti{position:relative;margin-bottom:26px}
+.ti:before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--acc)}
+.ti .d{color:var(--acc2);font-size:13px;font-weight:700;letter-spacing:.04em}
+.ti h3{font-size:18px;margin:2px 0}
+.ti .o{color:var(--muted);font-size:14px}
+.ti p{margin-top:6px;color:var(--muted);font-size:15px}
+
+/* chips */
+.sk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.sk h3{font-size:16px;margin-bottom:12px;color:var(--acc2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:color-mix(in srgb,var(--acc) 12%,transparent);border:1px solid color-mix(in srgb,var(--acc) 35%,transparent);color:var(--ink);padding:5px 11px;border-radius:999px;font-size:13px;font-weight:600}
+
+/* lab */
+.lab{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:34px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer;font-size:14px}
+.tabs button.on{background:var(--acc);color:var(--accInk);border-color:var(--acc)}
+.panel{display:none}.panel.on{display:block}
+.ctrl{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+select,input[type=range]{accent-color:var(--acc)}
+select,input[type=text],input[type=email],textarea{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit}
+svg text{fill:var(--muted);font:12px system-ui,sans-serif}
+.note{color:var(--muted);font-size:12px;margin-top:10px}
+.big{font:700 34px Georgia,serif;color:var(--acc2)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:36px}
+@media(max-width:860px){.contact{grid-template-columns:1fr}}
+.cl a{display:block;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+.cl a small{display:block;color:var(--muted)}
+.cl a:hover{color:var(--acc)}
+form{display:grid;gap:12px}
+textarea{min-height:130px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px;text-align:center}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Abdoul <span>DIA</span></a>
+    <nav id="nav"><ul id="navlist"></ul></nav>
+    <div class="tools">
+      <button class="btn-i" id="lang" aria-label="Langue">EN</button>
+      <button class="btn-i" id="theme" aria-label="Thème">◐</button>
+      <button class="btn-i burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="eyebrow"></div>
+    <h1 data-i18n="h1"></h1>
+    <p data-i18n="sub"></p>
+    <div class="cta">
+      <a class="btn p" href="#contact" data-i18n="cta1"></a>
+      <a class="btn s" id="cvlink" href="CV_Abdoul_DIA_BMCI_FR.pdf" download data-i18n="cta2"></a>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="partners"><strong data-i18n="partners"></strong> UNICEF · UNFPA · GIZ · ANSADE / ONS</div>
+  </div>
+</section>
+
+<section id="about"><div class="wrap about rv">
+  <div class="avatar" aria-hidden="true">AD</div>
+  <div>
+    <div class="eyebrow" data-i18n="n_about"></div>
+    <h2 data-i18n="about_t"></h2>
+    <div id="about_p"></div>
+  </div>
+</div></section>
+
+<section id="expertise"><div class="wrap">
+  <div class="rv"><div class="eyebrow" data-i18n="n_exp"></div><h2 data-i18n="exp_t"></h2><p class="lead" data-i18n="exp_l"></p></div>
+  <div class="grid g3" id="exp"></div>
+</div></section>
+
+<section id="career"><div class="wrap">
+  <div class="rv"><div class="eyebrow" data-i18n="n_car"></div><h2 data-i18n="car_t"></h2></div>
+  <div class="tl rv" id="tl"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="rv"><div class="eyebrow" data-i18n="n_pro"></div><h2 data-i18n="pro_t"></h2></div>
+  <div class="grid g3" id="pro"></div>
+
+  <div class="lab rv">
+    <div class="eyebrow" data-i18n="lab_e"></div>
+    <h3 style="font-size:24px;margin:4px 0 14px" data-i18n="lab_t"></h3>
+    <div class="tabs">
+      <button class="on" data-p="p1" data-i18n="lab_t1"></button>
+      <button data-p="p2" data-i18n="lab_t2"></button>
+    </div>
+    <div class="panel on" id="p1">
+      <div class="ctrl"><label for="ind" data-i18n="lab_ind"></label><select id="ind"></select></div>
+      <svg id="bars" viewBox="0 0 640 280" width="100%" role="img" aria-label="Graphique"></svg>
+    </div>
+    <div class="panel" id="p2">
+      <div class="ctrl"><label for="yr" data-i18n="lab_yr"></label><input type="range" id="yr" min="2023" max="2053" value="2035"><span class="big" id="yrv"></span></div>
+      <svg id="line" viewBox="0 0 640 280" width="100%" role="img" aria-label="Graphique"></svg>
+    </div>
+    <div class="note" data-i18n="lab_note"></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="rv"><div class="eyebrow" data-i18n="n_ski"></div><h2 data-i18n="ski_t"></h2></div>
+  <div class="grid g3" id="ski"></div>
+</div></section>
+
+<section id="edu"><div class="wrap">
+  <div class="rv"><div class="eyebrow" data-i18n="n_edu"></div><h2 data-i18n="edu_t"></h2></div>
+  <div class="grid g2" id="edu_g"></div>
+</div></section>
+
+<section id="contact"><div class="wrap contact rv">
+  <div>
+    <div class="eyebrow" data-i18n="n_con"></div>
+    <h2 data-i18n="con_t"></h2>
+    <p class="lead" data-i18n="con_l"></p>
+    <div class="cl" style="margin-top:18px">
+      <a href="mailto:abdjah1900@gmail.com"><small>Email</small>abdjah1900@gmail.com</a>
+      <a href="tel:+33751306819"><small data-i18n="phone"></small>+33 7 51 30 19 68</a>
+      <a href="https://linkedin.com/in/abdoul-dia-ba95ab2a5" target="_blank" rel="noopener"><small>LinkedIn</small>linkedin.com/in/abdoul-dia-ba95ab2a5</a>
+    </div>
+  </div>
+  <form id="f">
+    <input type="text" id="fn" required>
+    <input type="email" id="fe" required>
+    <textarea id="fm" required></textarea>
+    <button class="btn p" type="submit" data-i18n="send"></button>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap" data-i18n="foot"></div></footer>
+
+<script>
+const T={
+fr:{
+ nav:[["about","À propos"],["expertise","Expertise"],["career","Parcours"],["projects","Projets"],["skills","Compétences"],["contact","Contact"]],
+ eyebrow:"Statisticien-démographe · Data Analyst · Consultant indépendant",
+ h1:"Des données et des informations aux <em>décisions fiables</em>.",
+ sub:"J'aide les agences des Nations Unies, les ONG, les instituts de statistique et les bailleurs à concevoir, analyser et valoriser leurs enquêtes ménages, recensements et projections démographiques. Basé en France, à distance et mobile à l'international.",
+ cta1:"Me contacter", cta2:"Télécharger le CV", partners:"Ils m'ont fait confiance :",
+ stats:[[9,"","ans d'expérience en statistique et démographie"],[72,"","localités analysées pour une réponse humanitaire (UNFPA)"],[30,"","ans de projections démographiques (2023-2053)"],[4,"","grandes enquêtes et recensements : MICS 4 et 7, RGPH 4 et 5"]],
+ n_about:"À propos", about_t:"Rigueur statistique, sens du terrain",
+ about:["Statisticien-démographe (<strong>Bac+5</strong>, DESS Démographie, DU Santé publique), je couvre <strong>tout le cycle de la donnée</strong> : échantillonnage, cartographie, collecte numérique, contrôle qualité, analyse, projections et tableaux de bord.","J'ai travaillé pour l'<strong>UNICEF</strong>, l'<strong>UNFPA</strong>, la <strong>GIZ</strong> et l'institut national de statistique de Mauritanie, sur des opérations à grande échelle comme les enquêtes MICS et les recensements généraux de la population.","Mon objectif : des chiffres fiables, compréhensibles et utiles à ceux qui décident. Je travaille en français, en arabe et en anglais."],
+ n_exp:"Expertise", exp_t:"Ce que je fais pour vous", exp_l:"Six domaines où je livre des résultats exploitables, du protocole au rapport.",
+ exp:[["📐","Enquêtes ménages et recensements","Conception, supervision, validation et analyse : MICS, RGPH, enquêtes thématiques."],["🎯","Échantillonnage et pondération","Plans de sondage, pondération, calcul d'erreurs et contrôles de cohérence."],["📈","Projections démographiques","Projections à 30 ans avec Spectrum, DemProj et PASEX, et analyse thématique."],["🧹","Qualité et analyse des données","Nettoyage, apurement, tests statistiques et indicateurs avec R, Python, SQL, Stata, SPSS."],["🗺️","Tableaux de bord et cartographie","Power BI, QGIS et Excel avancé pour rendre les résultats lisibles."],["🩺","Nutrition, santé et protection","ENA for SMART, IPC, vaccination, santé reproductive, violences basées sur le genre."]],
+ n_car:"Parcours", car_t:"Expérience professionnelle",
+ tl:[["Sept. – oct. 2026","Data Analyst et consultant en données bancaires (freelance)","BMCI · Mauritanie","Tableaux de bord des cartes bancaires, suivi et analyse de l'application bancaire Masrivi, tableaux de bord de gestion des ressources humaines."],["Depuis sept. 2025","National Consultant – Statisticien MICS7","UNICEF · À distance","Échantillonnage, pondération, cartographie QGIS, nettoyage, analyse et indicateurs pour la planification nationale."],["Nov. 2025 – fév. 2026","Consultant – Projections démographiques 2023-2053","RGPH 5 · Mauritanie","Projections à 30 ans avec DemProj, Spectrum et PASEX, et analyse thématique."],["Fév. 2025 – août 2026","Consultant en analyse de données","UNFPA (CERF) · À distance","Masques KoboCollect, nettoyage et analyse des données de cliniques mobiles de 72 localités (Hodh Ech Chargui, Guidimakha), zones d'accueil de réfugiés maliens."],["Nov. 2024 – fév. 2025","Consultant statisticien","ANSADE · Nouakchott","Validation des données du recensement, indicateurs et rapports thématiques."],["2020 – 2023","Chargé de collecte et d'analyse d'enquêtes","SAS TRYOM · France","Suivi de collecte et des taux de réponse, apurement des bases, tableaux statistiques."],["2018","Consultant en statistique et démographie","GIZ · Nouakchott","Outils d'enquête, échantillonnage, analyse de la sécurité alimentaire des ménages."],["2008 – 2013","Statisticien démographe","ONS / ANSADE · Mauritanie","MICS 4 et RGPH 4 : supervision de la collecte, analyse et rapports officiels."]],
+ n_pro:"Projets", pro_t:"Réalisations choisies",
+ pro:[["IPC Mauritanie","Analyse de la malnutrition aiguë (nov. 2025 – fév. 2026) et projections jusqu'en octobre 2026."],["Enquêtes nutritionnelles SMART","Contrôle de plausibilité et estimation de la prévalence de la malnutrition aiguë."],["Dashboard MICS7 (démo)","Indicateurs régionaux et indice synthétique avec Python et Power BI. Données simulées."]],
+ lab_e:"Laboratoire interactif", lab_t:"Explorez une démo", lab_t1:"Indicateurs par région", lab_t2:"Projection de population", lab_ind:"Indicateur :", lab_yr:"Année :",
+ lab_note:"Démonstration avec des données entièrement simulées, sans lien avec une enquête réelle.",
+ inds:["Taux de scolarisation primaire (%)","Vaccination complète des enfants (%)","Accès à l'eau potable (%)"], reg:"Région", popt:"Population (millions, simulée)",
+ n_ski:"Compétences", ski_t:"Boîte à outils",
+ ski:[["Analyse et programmation",["R (expert)","Python","SQL","Stata","SPSS"]],["Collecte et terrain",["KoboToolbox","KoboCollect","CSPro","ENA for SMART"]],["Démographie",["Spectrum","DemProj","PASEX"]],["Visualisation et SIG",["Power BI","QGIS","Excel avancé"]],["Méthodes",["Échantillonnage","Pondération","Khi²","ANOVA","Suivi-évaluation","NVivo","ATLAS.ti"]],["Outils",["Git / GitHub","IA générative","Qualité des données"]]],
+ n_edu:"Formation", edu_t:"Diplômes et certifications",
+ edu:[["Master 2 Économie appliquée","Université de Bordeaux"],["DU Santé publique","ISPED, Bordeaux"],["DESS Démographie","IFORD"],["Maîtrise de Mathématiques","Université de Nouakchott"],["Results-Based Management","UN Women, 2025"],["Égalité de genre","Nations Unies, 2025"]],
+ n_con:"Contact", con_t:"Travaillons ensemble", con_l:"Une enquête à concevoir, des données à analyser, une mission de consultance ? Écrivez-moi : je réponds rapidement.",
+ phone:"Téléphone", fn:"Votre nom", fe:"Votre email", fm:"Votre message", send:"Envoyer le message",
+ foot:"© 2026 Abdoul DIA · Statisticien-démographe et Data Analyst · Saint-Denis, France", subj:"Contact depuis votre portfolio", cv:"CV_Abdoul_DIA_BMCI_FR.pdf"},
+en:{
+ nav:[["about","About"],["expertise","Expertise"],["career","Experience"],["projects","Projects"],["skills","Skills"],["contact","Contact"]],
+ eyebrow:"Statistician-Demographer · Data Analyst · Independent Consultant",
+ h1:"From data and information to <em>reliable decisions</em>.",
+ sub:"I help UN agencies, NGOs, national statistics offices and donors design, analyze and make the most of household surveys, censuses and population projections. Based in France, working remotely and available to travel internationally.",
+ cta1:"Get in touch", cta2:"Download CV", partners:"Trusted by:",
+ stats:[[9,"","years of experience in statistics and demography"],[72,"","localities analyzed for a humanitarian response (UNFPA)"],[30,"","years of population projections (2023-2053)"],[4,"","major surveys and censuses: MICS 4 and 7, census 4 and 5"]],
+ n_about:"About", about_t:"Statistical rigor, field sense",
+ about:["Statistician-demographer (<strong>MSc level</strong>, postgraduate diploma in Demography, University Diploma in Public Health), I cover the <strong>whole data cycle</strong>: sampling, mapping, digital collection, quality control, analysis, projections and dashboards.","I have worked for <strong>UNICEF</strong>, <strong>UNFPA</strong>, <strong>GIZ</strong> and Mauritania's national statistics office, on large-scale operations such as MICS surveys and national population censuses.","My goal: figures that are reliable, clear and useful to decision-makers. I work in French, Arabic and English."],
+ n_exp:"Expertise", exp_t:"What I do for you", exp_l:"Six areas where I deliver usable results, from protocol to report.",
+ exp:[["📐","Household surveys and censuses","Design, supervision, validation and analysis: MICS, census, thematic surveys."],["🎯","Sampling and weighting","Sample design, weighting, error estimation and consistency checks."],["📈","Population projections","30-year projections with Spectrum, DemProj and PASEX, plus thematic analysis."],["🧹","Data quality and analysis","Cleaning, statistical tests and indicators with R, Python, SQL, Stata, SPSS."],["🗺️","Dashboards and mapping","Power BI, QGIS and advanced Excel to make results readable."],["🩺","Nutrition, health and protection","ENA for SMART, IPC, vaccination, reproductive health, gender-based violence."]],
+ n_car:"Experience", car_t:"Professional experience",
+ tl:[["Sept – Oct 2026","Freelance Data Analyst and Banking Data Consultant","BMCI · Mauritania","Bank card dashboards, monitoring and analysis of the Masrivi banking app, and dashboards for human resources management."],["Since Sept 2025","National Consultant – MICS7 Survey Statistician","UNICEF · Remote","Sampling, weighting, QGIS mapping, cleaning, analysis and indicators for national planning."],["Nov 2025 – Feb 2026","Consultant – Population Projections 2023-2053","5th Census · Mauritania","30-year projections with DemProj, Spectrum and PASEX, plus thematic analysis."],["Feb 2025 – Aug 2026","Data Analysis Consultant","UNFPA (CERF) · Remote","KoboCollect forms, cleaning and analysis of mobile clinic data from 72 localities (Hodh Ech Chargui, Guidimakha), areas hosting Malian refugees."],["Nov 2024 – Feb 2025","Statistical Consultant","ANSADE · Nouakchott","Census data validation, indicators and thematic reports."],["2020 – 2023","Survey Data Collection and Analysis Officer","SAS TRYOM · France","Fieldwork and response-rate monitoring, database cleaning, statistical tables."],["2018","Statistics and Demography Consultant","GIZ · Nouakchott","Survey tools, sampling, household food security analysis."],["2008 – 2013","Statistician-Demographer","ONS / ANSADE · Mauritania","MICS 4 and 4th census: fieldwork supervision, analysis and official reports."]],
+ n_pro:"Projects", pro_t:"Selected work",
+ pro:[["IPC Mauritania","Acute malnutrition analysis (Nov 2025 – Feb 2026) and projections to October 2026."],["SMART nutrition surveys","Plausibility checks and estimation of acute malnutrition prevalence."],["MICS7 dashboard (demo)","Regional indicators and composite index with Python and Power BI. Simulated data."]],
+ lab_e:"Interactive lab", lab_t:"Explore a demo", lab_t1:"Indicators by region", lab_t2:"Population projection", lab_ind:"Indicator:", lab_yr:"Year:",
+ lab_note:"Demonstration with fully simulated data, unrelated to any real survey.",
+ inds:["Primary school enrolment (%)","Full child vaccination (%)","Access to safe water (%)"], reg:"Region", popt:"Population (millions, simulated)",
+ n_ski:"Skills", ski_t:"Toolbox",
+ ski:[["Analysis and programming",["R (expert)","Python","SQL","Stata","SPSS"]],["Collection and fieldwork",["KoboToolbox","KoboCollect","CSPro","ENA for SMART"]],["Demography",["Spectrum","DemProj","PASEX"]],["Visualization and GIS",["Power BI","QGIS","Advanced Excel"]],["Methods",["Sampling","Weighting","Chi-square","ANOVA","M&E","NVivo","ATLAS.ti"]],["Tools",["Git / GitHub","Generative AI","Data quality"]]],
+ n_edu:"Education", edu_t:"Degrees and certifications",
+ edu:[["MSc (Master 2) Applied Economics","University of Bordeaux"],["University Diploma in Public Health","ISPED, Bordeaux"],["Postgraduate Diploma (DESS) in Demography","IFORD"],["Mathematics degree (Maîtrise)","University of Nouakchott"],["Results-Based Management","UN Women, 2025"],["Gender Equality","United Nations, 2025"]],
+ n_con:"Contact", con_t:"Let's work together", con_l:"A survey to design, data to analyze, a consultancy to discuss? Write to me: I reply quickly.",
+ phone:"Phone", fn:"Your name", fe:"Your email", fm:"Your message", send:"Send message",
+ foot:"© 2026 Abdoul DIA · Statistician-Demographer and Data Analyst · Saint-Denis, France", subj:"Contact from your portfolio", cv:"CV_Abdoul_DIA_BMCI_EN.pdf"}
+};
+let lang="fr", theme="dark";
+try{lang=localStorage.getItem("lang")||"fr";theme=localStorage.getItem("theme")||theme}catch(e){}
+const $=s=>document.querySelector(s);
+const cssv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+function render(){
+  const t=T[lang];
+  document.documentElement.lang=lang;
+  $("#lang").textContent=lang==="fr"?"EN":"FR";
+  document.querySelectorAll("[data-i18n]").forEach(e=>{e.innerHTML=t[e.dataset.i18n]??""});
+  $("#navlist").innerHTML=t.nav.map(n=>`<li><a href="#${n[0]}">${n[1]}</a></li>`).join("");
+  $("#cvlink").href=t.cv;
+  $("#stats").innerHTML=t.stats.map(s=>`<div class="stat"><b data-n="${s[0]}" data-s="${s[1]}">0${s[1]}</b><span>${s[2]}</span></div>`).join("");
+  $("#about_p").innerHTML=t.about.map(p=>`<p>${p}</p>`).join("");
+  $("#exp").innerHTML=t.exp.map(c=>`<div class="card rv"><div class="ic">${c[0]}</div><h3>${c[1]}</h3><p>${c[2]}</p></div>`).join("");
+  $("#tl").innerHTML=t.tl.map(i=>`<div class="ti"><div class="d">${i[0]}</div><h3>${i[1]}</h3><div class="o">${i[2]}</div><p>${i[3]}</p></div>`).join("");
+  $("#pro").innerHTML=t.pro.map(c=>`<div class="card rv"><h3>${c[0]}</h3><p>${c[1]}</p></div>`).join("");
+  $("#ski").innerHTML=t.ski.map(g=>`<div class="sk rv"><h3>${g[0]}</h3><div class="chips">${g[1].map(c=>`<span class="chip">${c}</span>`).join("")}</div></div>`).join("");
+  $("#edu_g").innerHTML=t.edu.map(e=>`<div class="card rv"><h3>${e[0]}</h3><p>${e[1]}</p></div>`).join("");
+  $("#fn").placeholder=t.fn;$("#fe").placeholder=t.fe;$("#fm").placeholder=t.fm;
+  const sel=$("#ind");const cur=sel.selectedIndex>0?sel.selectedIndex:0;
+  sel.innerHTML=t.inds.map((x,i)=>`<option value="${i}">${x}</option>`).join("");sel.selectedIndex=cur;
+  drawBars();drawLine();observe();
+}
+
+/* demo charts (simulated data) */
+const REG=[[78,62,55],[64,71,48],[52,58,40],[71,66,61],[59,49,37],[83,74,68],[47,55,33],[68,60,52]];
+function drawBars(){
+  const t=T[lang],i=+$("#ind").value,svg=$("#bars"),W=640,H=280,m={l:34,b:40,t:14},bw=(W-m.l-10)/REG.length;
+  let s=`<line x1="${m.l}" y1="${H-m.b}" x2="${W-6}" y2="${H-m.b}" stroke="${cssv('--line')}"/>`;
+  [0,25,50,75,100].forEach(v=>{const y=H-m.b-(H-m.b-m.t)*v/100;s+=`<line x1="${m.l}" x2="${W-6}" y1="${y}" y2="${y}" stroke="${cssv('--line')}" stroke-dasharray="3 4"/><text x="${m.l-6}" y="${y+4}" text-anchor="end">${v}</text>`});
+  REG.forEach((r,k)=>{const v=r[i],h=(H-m.b-m.t)*v/100,x=m.l+k*bw+bw*.18,y=H-m.b-h;
+    s+=`<rect x="${x}" y="${y}" width="${bw*.64}" height="${h}" rx="5" fill="${cssv('--acc')}"><title>${t.reg} ${String.fromCharCode(65+k)} : ${v}%</title></rect><text x="${x+bw*.32}" y="${y-6}" text-anchor="middle" style="fill:${cssv('--ink')}">${v}</text><text x="${x+bw*.32}" y="${H-m.b+18}" text-anchor="middle">${t.reg} ${String.fromCharCode(65+k)}</text>`});
+  svg.innerHTML=s;
+}
+function popAt(y){return 5.0*Math.pow(1+0.0265-(y-2023)*0.00035,(y-2023))}
+function drawLine(){
+  const t=T[lang],svg=$("#line"),W=640,H=280,m={l:44,r:14,b:36,t:16},y0=2023,y1=2053,yr=+$("#yr").value;
+  const maxV=popAt(y1)*1.05,X=y=>m.l+(W-m.l-m.r)*(y-y0)/(y1-y0),Y=v=>H-m.b-(H-m.b-m.t)*v/maxV;
+  let pts=[];for(let y=y0;y<=y1;y++)pts.push(`${X(y)},${Y(popAt(y))}`);
+  let s="";
+  [0,.25,.5,.75,1].forEach(f=>{const v=maxV*f,y=Y(v);s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${y}" y2="${y}" stroke="${cssv('--line')}" stroke-dasharray="3 4"/><text x="${m.l-6}" y="${y+4}" text-anchor="end">${v.toFixed(1)}</text>`});
+  [2023,2033,2043,2053].forEach(y=>{s+=`<text x="${X(y)}" y="${H-m.b+18}" text-anchor="middle">${y}</text>`});
+  s+=`<polyline points="${pts.join(" ")}" fill="none" stroke="${cssv('--acc')}" stroke-width="3" stroke-linejoin="round"/>`;
+  s+=`<line x1="${X(yr)}" x2="${X(yr)}" y1="${m.t}" y2="${H-m.b}" stroke="${cssv('--acc2')}" stroke-dasharray="4 4"/><circle cx="${X(yr)}" cy="${Y(popAt(yr))}" r="6" fill="${cssv('--acc2')}"/>`;
+  s+=`<text x="${m.l}" y="12">${t.popt}</text>`;
+  svg.innerHTML=s;$("#yrv").textContent=`${yr} · ${popAt(yr).toFixed(2)} M`;
+}
+
+/* interactions */
+$("#ind").onchange=drawBars;$("#yr").oninput=drawLine;
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".tabs button,.panel").forEach(e=>e.classList.remove("on"));
+  b.classList.add("on");$("#"+b.dataset.p).classList.add("on");drawBars();drawLine();
+});
+$("#lang").onclick=()=>{lang=lang==="fr"?"en":"fr";try{localStorage.setItem("lang",lang)}catch(e){}render()};
+$("#theme").onclick=()=>{theme=theme==="dark"?"light":"dark";document.documentElement.dataset.theme=theme;try{localStorage.setItem("theme",theme)}catch(e){}drawBars();drawLine()};
+$("#burger").onclick=()=>$("#nav").classList.toggle("open");
+$("#navlist").onclick=e=>{if(e.target.tagName==="A")$("#nav").classList.remove("open")};
+$("#f").onsubmit=e=>{e.preventDefault();
+  const b=`${$("#fm").value}\n\n${$("#fn").value} (${$("#fe").value})`;
+  location.href=`mailto:abdjah1900@gmail.com?subject=${encodeURIComponent(T[lang].subj)}&body=${encodeURIComponent(b)}`;
+};
+
+/* reveal + counters */
+let io;
+function observe(){
+  if(io)io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(en=>{
+    if(!en.isIntersecting)return;
+    en.target.classList.add("in");
+    const c=en.target.querySelector&&en.target.querySelector("[data-n]");
+    if(en.target.matches(".stat")){const b=en.target.querySelector("b");count(b)}
+    io.unobserve(en.target);
+  }),{threshold:.15});
+  document.querySelectorAll(".rv,.stat,.ti").forEach(e=>io.observe(e));
+}
+function count(b){
+  const n=+b.dataset.n,sfx=b.dataset.s;
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches){b.textContent=n+sfx;return}
+  const t0=performance.now(),d=1200;
+  (function f(t){const p=Math.min((t-t0)/d,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)))+sfx;if(p<1)requestAnimationFrame(f)})(t0);
+}
+document.documentElement.dataset.theme=theme;
+render();
+</script>
+</body>
+</html>
